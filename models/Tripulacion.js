@@ -25,7 +25,14 @@ const TripulacionSchema = new mongoose.Schema({
 
         }
 
-    }]
+    }],
+
+    regreso: {
+
+        type: mongoose.Schema.ObjectId,
+        ref: 'Base'
+
+    }
 
 });
 

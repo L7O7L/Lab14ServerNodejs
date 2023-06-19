@@ -4,7 +4,7 @@ var getAllAviones = async (req, res) => {
 
     try {
 
-        const aviones = await Aviones.find();
+        const aviones = await Aviones.find().populate('base', 'nombre');
         res.json(aviones);
         
     } catch (error) {
@@ -60,7 +60,7 @@ var getOneAviones = async (req, res) => {
 
     try {
 
-        let aviones = await Aviones.findById(req.params.id);
+        let aviones = await Aviones.findById(req.params.id).populate('base', 'nombre');;
 
         if(!aviones){
             res.status(404).json({ msg: 'No existe el avion'});

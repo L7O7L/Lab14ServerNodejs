@@ -14,6 +14,13 @@ const AvionesSchema = new mongoose.Schema({
         type: String,
         required: true
 
+    },
+
+    base: {
+
+        type: mongoose.Schema.ObjectId,
+        ref: 'Base'
+
     }
 
 });
