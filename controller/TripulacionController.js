@@ -6,7 +6,7 @@ var getAllTripulacion = async (req, res) => {
 
         const tripulacion = await Tripulacion.find().populate('tripulacion', 'num_vuelo')
                                                     .populate('base', 'nombre');
-                                                    
+
         res.json(tripulacion);
         
     } catch (error) {
@@ -62,7 +62,8 @@ var getOneTripulacion = async (req, res) => {
 
     try {
 
-        let tripulacion = await Tripulacion.findById(req.params.id).populate('tripulacion', 'num_vuelo');
+        let tripulacion = await Tripulacion.findById(req.params.id).populate('tripulacion', 'num_vuelo')
+                                                                   .populate('base', 'nombre');
 
         if(!tripulacion){
             res.status(404).json({ msg: 'No existe en la tripulacion'});

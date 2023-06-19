@@ -21,6 +21,9 @@ app.use(express.json());
 app.use('/api/piloto', require('./routes/PilotoRoutes'));
 app.use('/api/tripulacion', require('./routes/TripulacionRouter'));
 app.use('/api/aviones', require('./routes/AvionesRouter'));
+app.use('/api/base', require('./routes/BaseRouter'));
+app.use('/api/vuelos', require('./routes/VueloRouter'));
+
 
 app.listen(config.port, () => {
     console.log('El servidor por el puerto 4000')
